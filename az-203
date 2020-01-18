@@ -5,3 +5,10 @@ Github AZ-203-DevelopingSolutionsforMicrosoftAzure
 
 AZ-203-DevelopingSolutionsforMicrosoftAzure-master/Allfiles
 AZ-203-DevelopingSolutionsforMicrosoftAzure-master/Instructions/Labs
+
+ssh Student@40.117.184.11
+
+az account list
+az account set -s account id
+az account list
+
