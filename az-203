@@ -12,3 +12,22 @@ az account list
 az account set -s account id
 az account list
 
+XPath for XML
+JMESPath for JSON
+
+Data stored in Array
+az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv
+
+{} 要show成Array
+[0] 取第一筆
+
+az group create ....
+az group deploy create ... create by template
+each resource could be exported to template for creating by az xxx deploy create from template
+
+resource
+template
+
+
+
+
