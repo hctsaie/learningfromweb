@@ -40,6 +40,24 @@ az group deployment create --resource-group $resourceGroupName --template-uri ht
 az vm show --resource-group $resourceGroupName --name "$projectName-vm" --show-details --query publicIps --output tsv
 
 ---------------------
+從
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine AS build
+WORKDIR /app
+
+COPY *.csproj ./
+RUN dotnet restore
+
+COPY . ./
+RUN dotnet publish --configuration Release --output out
+
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2-alpine
+WORKDIR /app
+
+COPY --from=build /app/out .
+
+ENTRYPOINT ["dotnet", "ipcheck.dll"]
+
+---------------------
 
 ACI - Run One Container (只Run一個Container, 需Create一個Container Instance, 再用這個Container Instance去看Container)
 AKS - K8S
@@ -49,6 +67,9 @@ AKS - K8S
 
 az acr list --query "max_by([], &creationDate).name" --output tsv
 在acr list中, 去query, 找最大一筆(max_by), 是array([]), 找property(&)creationDate,找到這個的name.
+
+acrName=$(az acr list --query "max_by([], &creationDate).name" --output tsv)
+取出, 指定為變數
 
 
 
