@@ -5,6 +5,8 @@ Github AZ-203-DevelopingSolutionsforMicrosoftAzure
 
 https://linuxacademy.com/course/microsoft-certified-azure-developer-exam-203-prep/
 
+https://onedrive.live.com/?authkey=%21AFWXtU22ttgWJtQ&id=259366EE7BCC0505%2165974&cid=259366EE7BCC0505
+
 AZ-203-DevelopingSolutionsforMicrosoftAzure-master/Allfiles
 AZ-203-DevelopingSolutionsforMicrosoftAzure-master/Instructions/Labs
 
@@ -38,6 +40,17 @@ az group deployment create --resource-group $resourceGroupName --template-uri ht
 az vm show --resource-group $resourceGroupName --name "$projectName-vm" --show-details --query publicIps --output tsv
 
 ---------------------
+
+ACI - Run One Container (只Run一個Container, 需Create一個Container Instance, 再用這個Container Instance去看Container)
+AKS - K8S
+
+要Manually Create Container Instance, 要取得該Dockerfile所在的Registry Server, Username, and Passowrd (Access Key)
+
+
+az acr list --query "max_by([], &creationDate).name" --output tsv
+在acr list中, 去query, 找最大一筆(max_by), 是array([]), 找property(&)creationDate,找到這個的name.
+
+
 
 
 
