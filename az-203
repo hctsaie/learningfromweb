@@ -3,6 +3,8 @@
 Github AZ-203-DevelopingSolutionsforMicrosoftAzure
 研討會資料 teacher.syset.com
 
+https://linuxacademy.com/course/microsoft-certified-azure-developer-exam-203-prep/
+
 AZ-203-DevelopingSolutionsforMicrosoftAzure-master/Allfiles
 AZ-203-DevelopingSolutionsforMicrosoftAzure-master/Instructions/Labs
 
@@ -21,12 +23,23 @@ az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query
 {} 要show成Array
 [0] 取第一筆
 
+---------------------
+vm -> template export
+resource -> template deployment
+
 az group create ....
 az group deploy create ... create by template
 each resource could be exported to template for creating by az xxx deploy create from template
 
-resource
-template
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-secured-vm-from-template
+
+az group create --name $resourceGroupName --location "$location" &&
+az group deployment create --resource-group $resourceGroupName --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json --parameters projectName=$projectName adminUsername=$username adminPublicKey="$key" &&
+az vm show --resource-group $resourceGroupName --name "$projectName-vm" --show-details --query publicIps --output tsv
+
+---------------------
+
+
 
 
 
