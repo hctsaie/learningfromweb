@@ -66,4 +66,14 @@ az batch task file download \
     --destination ./stdout.txt
 
 
+connectstring of storage account
+DefaultEndpointsProtocol=https;AccountName=imgstorhct;AccountKey=2Wgwu68/3NGIsiaXLmZQEUUvljGhy6iAqKvOKnhERGZgnzemtN12zNQCiDtH3QIFZCUG/UvyWbLWHXZs+8vqQw==;EndpointSuffix=core.windows.net
+
+http://localhost:52661/
+
+dotnet run
+dotnet publish -o publish -c Release
+
+http://imgapihctapi.azurewebsites.net/
+
 
