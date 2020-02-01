@@ -1,9 +1,7 @@
-ResourceGroup='myResourceGroup'
+ResourceGroup='hcResourceGroup'
 Location='eastus2'
-StorageAccount='mcgstorageaccount'
-BatchAccount='mcgbatchaccount'
-	
-
+StorageAccount='hctstorageaccount'
+BatchAccount='hctbatchaccount'
 
 az group create --name $ResourceGroup --location $Location
 
@@ -28,6 +26,17 @@ az batch pool create \
 
 az batch pool show --pool-id mypool \
     --query "allocationState"
+
+//當pool出現quota不夠時,可以至支援處,新增quota. 
+新增支援要求 
+問題類型: 配額 
+配額類型: 批次處理
+
+問題詳細資料
+為能加快處理您增加配額之要求的速度，請務必提供其他資訊。
+提供詳細資料 -> Av2
+位置: 美國東部2
+VM系列: Av2 Service
 
 az batch job create \
     --id myjob \
@@ -55,3 +64,6 @@ az batch task file download \
     --task-id mytask1 \
     --file-path stdout.txt \
     --destination ./stdout.txt
+
+
+
