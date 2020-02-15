@@ -1,1 +1,5 @@
 azure cli download
+
+az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')].name" --output tsv
+az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')].{Name:name}" --output tsv 
+az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')].{Name:name,Location:location}" --output tsv
