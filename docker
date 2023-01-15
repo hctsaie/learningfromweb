@@ -1,3 +1,21 @@
+
+Hyper-V 可分成 2 部分：底層的虛擬機器平台及上層的虛擬機器管理軟體
+如果想要掛載Ubuntu, 是要啟動Hpyer-V (虛擬機器平台及上層的虛擬機器管理軟體)
+如果是要使用WSL2, 則只需要啟動Hyper-V的虛擬機器平台
+WSL2也是使用Hyper-V, run在虛擬機器平台上. 但, 不需要的是虛擬機器管理軟體(用來管理掛載的作法系統)
+
+Windows 11 (or 新版Windows)安裝WSL, 已不需要手動去啟用啟用 Windows 子系統 Linux 版和啟用虛擬機器功能
+直接下
+wsl --install -d Ubuntu即可 (or wsl --install -> default Ubuntu)
+手動方式(或過去版本, 才需要去控制台啟動, 或下Command Line)
+用 admin 權限開啟 PowerShell，
+啟用Windows 子系統 Linux 版: 執行
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+啟用虛擬機器平台選用功能: 執行
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+重新啟動電腦
+下載安裝 WSL 2 Linux 核心更新套件
+
 https://www.zhihu.com/question/439585675
 
 https://klee1611.github.io/posts/wsl-2-on-windows-part-1.html/
