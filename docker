@@ -5,8 +5,13 @@ Hyper-V 可分成 2 部分：底層的虛擬機器平台及上層的虛擬機器
 WSL2也是使用Hyper-V, run在虛擬機器平台上. 但, 不需要的是虛擬機器管理軟體(用來管理掛載的作法系統)
 
 Windows 11 (or 新版Windows)安裝WSL, 已不需要手動去啟用啟用 Windows 子系統 Linux 版和啟用虛擬機器功能
-直接下
-wsl --install -d Ubuntu即可 (or wsl --install -> default Ubuntu)
+直接下底下的命令即可. (不用自行啟動"啟用 Windows 子系統 Linux 版"和"啟用虛擬機器功能"
+但, 一定要重開機. 否則, 還是無法執行wsl相關命令. 或, 設定wsl default version.
+
+wsl --install -d Ubuntu
+(or wsl --install -> default Ubuntu)
+
+
 手動方式(或過去版本, 才需要去控制台啟動, 或下Command Line)
 用 admin 權限開啟 PowerShell，
 啟用Windows 子系統 Linux 版: 執行
@@ -15,6 +20,9 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 重新啟動電腦
 下載安裝 WSL 2 Linux 核心更新套件
+重開機完之後請開啟官方文件頁面的安裝 WSL 並更新至 WSL2這一頁，找到步驟4 - 下載 Linux 核心更新套件，下載這個更新套件後雙點擊它以進行安裝。
+如果這一步跳過的話，在設定 WSL2 為預設版本時會出現 WSL 2 需要更新其核心元件。如需詳細資訊，請造訪 visit https://aka.ms/wsl2kernel 這個錯誤，所以還請別跳過這個步驟。
+
 
 https://www.zhihu.com/question/439585675
 
