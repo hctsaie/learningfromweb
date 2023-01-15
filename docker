@@ -22,7 +22,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 下載安裝 WSL 2 Linux 核心更新套件
 重開機完之後請開啟官方文件頁面的安裝 WSL 並更新至 WSL2這一頁，找到步驟4 - 下載 Linux 核心更新套件，下載這個更新套件後雙點擊它以進行安裝。
 如果這一步跳過的話，在設定 WSL2 為預設版本時會出現 WSL 2 需要更新其核心元件。如需詳細資訊，請造訪 visit https://aka.ms/wsl2kernel 這個錯誤，所以還請別跳過這個步驟。
-
+wsl --set-default-version 2
+wsl -l -v
+wsl --list --verbose
 
 https://www.zhihu.com/question/439585675
 
